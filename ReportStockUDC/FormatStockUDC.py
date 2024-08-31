@@ -75,14 +75,14 @@ from Dictionaries.Dicts import (
 def FormatBox():
     print("A formatação do arquivo contendo os materiais em box será iniciada!")
     Arquivo_Deem = pd.read_excel(
-        r"C:\Users\F89074d\Desktop\Analises\Arquivos 2024\Divergências 2024.xlsx"
+        r"caminho do arquivo"
     )
     Data_base = pd.read_excel(
-        r"C:\Users\F89074d\Documents\Python - Arquivos Base\Arquivos manuais\MM60.xlsx"
+        r"caminho do arquivo"
     )  # Modificar caminhos
 
     Data_frame = RemoveColumnsBox(
-        r"C:\Users\F89074d\Documents\Python - Arquivos Base\Estoque+udc.csv"
+        r"caminho do arquivo"
     )
     # Definindo "Material" como índice e a "Preço Unitário" como valor no dicionário:
     material_dict = Data_base.set_index("Material")["Preço"].to_dict()
@@ -176,7 +176,7 @@ def FormatBox():
     ]
 
     Data_frame.to_excel(
-        r"C:\Users\F89074d\Documents\Python - Arquivos Formatados\Box CL.xlsx",
+        r"caminho do arquivo",
         index=False,
     )
     print(
@@ -194,7 +194,7 @@ def FormatI2():
         "A formatação do arquivo contendo os itens recebidos e alocados em I2 será iniciada!"
     )
     Data_base = pd.read_excel(
-        r"C:\Users\F89074d\Documents\Python - Arquivos Base\Arquivos manuais\MM60.xlsx"
+        r"caminho do arquivo"
     )
 
     # Definindo "Material" como índice e a "Preço Unitário" como valor no dicionário:
@@ -202,7 +202,7 @@ def FormatI2():
     material_type = Data_base.set_index("Material")["TpM"].to_dict()
 
     Data_frame = RemoveColumnsI2(
-        r"C:\Users\F89074d\Documents\Python - Arquivos Base\Estoque+udc.csv"
+        r"caminho do arquivo"
     )
     Data_frame = Data_frame[Data_frame["Locação"] == "I2"]
 
@@ -301,7 +301,7 @@ def FormatI2():
         ]
     ]
     Data_frame.to_excel(
-        r"C:\Users\F89074d\Documents\Python - Arquivos Formatados\I2.xlsx",
+        r"caminho do arquivo",
         index=False,
     )
     print(
@@ -318,10 +318,10 @@ def FormatVirtualLoc():
         "A formatação do arquivo contendo os itens alocados em locações virtuais será iniciada!"
     )
     Data_base = pd.read_excel(
-        r"C:\Users\F89074d\Documents\Python - Arquivos Base\Arquivos manuais\MM60.xlsx"
+        r"caminho do arquivo"
     )
     Data_frame = RemoveColumnsVirtualLoc(
-        r"C:\Users\F89074d\Documents\Python - Arquivos Base\Estoque+udc.csv"
+        r"caminho do arquivo"
     )
     locations = [
         "CLP1.C.01.17.F.00",
@@ -384,7 +384,7 @@ def FormatVirtualLoc():
         ]
     ]
     Data_frame.to_excel(
-        r"C:\Users\F89074d\Documents\Python - Arquivos Formatados\Locações Virtuais.xlsx",
+        r"caminho do arquivo",
         index=False,
     )
 
@@ -402,10 +402,10 @@ def FormatMissions():
         "A formatação do arquivo contendo os itens com pendência de confirmação de missões será iniciada!"
     )
     Data_frame = RemoveColumnsMissions(
-        r"C:\Users\F89074d\Documents\Python - Arquivos Base\Estoque+udc.csv"
+        r"caminho do arquivo"
     )
     Data_base = pd.read_excel(
-        r"C:\Users\F89074d\Documents\Python - Arquivos Base\Arquivos manuais\MM60.xlsx"
+        r"caminho do arquivo"
     )
     material_dict = Data_base.set_index("Material")["Preço"].to_dict()
 
@@ -485,7 +485,7 @@ def FormatMissions():
     ]
 
     Data_frame.to_excel(
-        r"C:\Users\F89074d\Documents\Python - Arquivos Formatados\Missões Pendentes.xlsx",
+        r"caminho do arquivo",
         index=False,
     )
     print(
@@ -502,10 +502,10 @@ def FormatStorage():
         "A formatação do arquivo contendo os itens pendentes de armazenamento será iniciada!"
     )
     Data_frame = RemoveColumnsStorage(
-        r"C:\Users\F89074d\Documents\Python - Arquivos Base\Estoque+udc.csv"
+        r"caminho do arquivo"
     )
     Data_base = pd.read_excel(
-        r"C:\Users\F89074d\Documents\Python - Arquivos Base\Arquivos manuais\MM60.xlsx"
+        r"caminho do arquivo"
     )
     # Definindo "Material" como índice e a "Preço Unitário" como valor no dicionário:
     material_dict = Data_base.set_index("Material")["Preço"].to_dict()
@@ -591,7 +591,7 @@ def FormatStorage():
         ]
     ]
     Data_frame.to_excel(
-        r"C:\Users\F89074d\Documents\Python - Arquivos Formatados\Pendência armazenagem.xlsx",
+        r"caminho do arquivo",
         index=False,
     )
     print(
@@ -608,10 +608,10 @@ def FormatQuality():
         "A formatação do arquivo contendo os itens com status contábil de Qualidade será iniciada!"
     )
     Data_frame = RemoveColumnsQuality(
-        r"C:\Users\F89074d\Documents\Python - Arquivos Base\Estoque+udc.csv"
+        r"caminho do arquivo"
     )
     Data_base = pd.read_excel(
-        r"C:\Users\F89074d\Documents\Python - Arquivos Base\Arquivos manuais\MM60.xlsx"
+        r"caminho do arquivo"
     )
     # Definindo "Material" como índice e a "Preço Unitário" como valor no dicionário:
     material_dict = Data_base.set_index("Material")["Preço"].to_dict()
@@ -680,7 +680,7 @@ def FormatQuality():
         ]
     ]
     Data_frame.to_excel(
-        r"C:\Users\F89074d\Documents\Python - Arquivos Formatados\Itens em qualidade.xlsx",
+        r"caminho do arquivo",
         index=False,
     )
     print(
@@ -697,7 +697,7 @@ def FormatRTL():
         "A formatação do arquivo contendo os itens que foram feitos o movimento de RTL será iniciada!"
     )
     Data_frame = RemoveColumnsRTL(
-        r"C:\Users\F89074d\Documents\Python - Arquivos Base\Estoque+udc.csv"
+        r"caminho do arquivo"
     )
 
     Data_frame = Data_frame[Data_frame["Locação"] == "RTL2"]
@@ -726,7 +726,7 @@ def FormatRTL():
 
     Data_frame = Data_frame.drop("Diferença", axis=1)
     Data_frame.to_excel(
-        r"C:\Users\F89074d\Documents\Python - Arquivos Formatados\Itens em RTL2.xlsx",
+        r"caminho do arquivo",
         index=False,
     )
     print(
@@ -746,10 +746,10 @@ def FormatSHTLoad():
     locale.setlocale(locale.LC_TIME, "pt_BR")
 
     Data_frame = RemoveColumnsSHTLoad(
-        r"C:\Users\F89074d\Documents\Python - Arquivos Base\Estoque+udc.csv"
+        r"caminho do arquivo"
     )
     Data_base = pd.read_excel(
-        r"C:\Users\F89074d\Documents\Python - Arquivos Base\Arquivos manuais\MM60.xlsx"
+        r"caminho do arquivo"
     )
 
     # Definindo 'Material' como índice e convertendo para dicionário
@@ -842,7 +842,7 @@ def FormatSHTLoad():
         ]
     ]
     Data_frame.to_excel(
-        r"C:\Users\F89074d\Documents\Python - Arquivos Formatados\Itens em Shuttle_Load_CL.xlsx",
+        r"caminho do arquivo",
         index=False,
     )
     print(
@@ -859,10 +859,10 @@ def FormatTRS():
         "A formatação do arquivo contendo os itens que estão pendentes de recebimento shuttle_trs_pc será iniciada!"
     )
     Data_frame = RemoveColumnsTRS(
-        r"C:\Users\F89074d\Documents\Python - Arquivos Base\Estoque+udc.csv"
+        r"caminho do arquivo"
     )
     Data_base = pd.read_excel(
-        r"C:\Users\F89074d\Documents\Python - Arquivos Base\Arquivos manuais\MM60.xlsx"
+        r"caminho do arquivo"
     )
     # Definindo "Material" como índice e a "Preço Unitário" como valor no dicionário:
     material_dict = Data_base.set_index("Material")["Preço"].to_dict()
@@ -910,7 +910,7 @@ def FormatTRS():
     Data_frame["Turno"] = np.select(condition, work_shift, default="Primeiro Turno")
 
     Data_frame.to_excel(
-        r"C:\Users\F89074d\Documents\Python - Arquivos Formatados\Itens em Shuttle_TRS_PC.xlsx",
+        r"caminho do arquivo",
         index=False,
     )
 
@@ -928,11 +928,11 @@ def FormatContainer():
         "A formatação do arquivo contendo os itens fora de UDC container será iniciada!"
     )
     Data_frame = RemoveColumnsContainer(
-        r"C:\Users\F89074d\Documents\Python - Arquivos Base\Estoque+udc.csv"
+        r"caminho do arquivo"
     )
 
     Data_base = pd.read_excel(
-        r"C:\Users\F89074d\Documents\Python - Arquivos Base\Arquivos manuais\MM60.xlsx"
+        r"caminho do arquivo"
     )
 
     # Definindo "Material" como índice e a "Preço Unitário" como valor no dicionário:
@@ -1044,7 +1044,7 @@ def FormatContainer():
     ]
 
     Data_frame.to_excel(
-        r"C:\Users\F89074d\Documents\Python - Arquivos Formatados\Itens fora de container.xlsx",
+        r"caminho do arquivo",
         index=False,
     )
     print(
@@ -1060,11 +1060,11 @@ def FormatRej():
     print("A formatação do arquivo contendo os itens rejeitados será iniciada!")
 
     Data_frame = RemoveColumnsRej(
-        r"C:\Users\F89074d\Documents\Python - Arquivos Base\Estoque+udc.csv"
+        r"caminho do arquivo"
     )
 
     Data_base = pd.read_excel(
-        r"C:\Users\F89074d\Documents\Python - Arquivos Base\Arquivos manuais\MM60.xlsx"
+        r"caminho do arquivo"
     )
 
     material_dict = Data_base.set_index("Material")["Preço"].to_dict()
@@ -1131,7 +1131,7 @@ def FormatRej():
     ]
 
     Data_frame.to_excel(
-        r"C:\Users\F89074d\Documents\Python - Arquivos Formatados\Rejeitado.xlsx",
+        r"caminho do arquivo",
         index=False,
     )
 
