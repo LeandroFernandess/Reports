@@ -28,23 +28,23 @@ def ExtractFile():
         "\n" * 2,
     )
     service = Service(
-        r"C:\Users\F89074d\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Python 3.12\Driver EDGE\msedgedriver.exe"
+        r"caminho para o webdriver"
     )
     Browser = webdriver.Edge(service=service)
 
     Browser.maximize_window()
 
     Browser.get(
-        "https://contagem.click.cnh.com/ck/bs/browser/main.jsp?_PAGE_URL=%2Fck%2Fbs%2Fpages%2FstartItem.jsp%3FCD_ITEM%3DStock.Accounting.stock.Estoque%2520UdC&_ACTION_TYPE=5&OBJECT_ID=VIEW_GIACENZA_UDC"
+        "link para acesso ao sistema"
     )
     username_field = WebDriverWait(Browser, 20).until(
         EC.presence_of_element_located(
             (By.XPATH, "/html/body/div/div[2]/div[1]/form/table/tbody/tr[1]/td/input")
         )
     )
-    username_field.send_keys("F89074D")
+    username_field.send_keys("usuário")
 
-    Browser.find_element(By.NAME, "_PASSWORD").send_keys("Cnhindustrial.2024")
+    Browser.find_element(By.NAME, "_PASSWORD").send_keys("senha")
 
     Browser.find_element(By.NAME, "login").click()
 
@@ -84,11 +84,11 @@ def ExtractFile():
     Browser.maximize_window()
     Browser.find_element(By.ID, "ok_btn").click()
 
-    file_path = r"C:\Users\F89074d\Downloads\Estoque+udc.csv"
+    file_path = r"caminho onde o arquivo ficará com download"
     while not os.path.exists(file_path):
         sleep(1)
-    origin_path = r"C:\Users\F89074d\Downloads\Estoque+udc.csv"
-    destination_path = r"C:\Users\F89074d\Documents\Python - Arquivos Base"
+    origin_path = r"caminho origem do arquivo"
+    destination_path = r"caminho destino do arquivo"
 
     try:
         shutil.copy(origin_path, destination_path)
